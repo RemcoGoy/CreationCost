@@ -1,4 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CreationCost
+
+## Feature Roadmap
+
+- **Filament Configuration**
+  - CRUD features for Filament configuration
+  - Import and export configuration as JSON
+  - Configuration may include
+    - Pricing/KG
+    - Filament Type
+    - Spool Weight
+    - Markup
+
+- **Machine Configuration**
+  - CRUD features for Machine configuration
+  - Import and export configuration as JSON
+  - Configuration may include
+    - Machine Type
+    - Printer cost
+    - Repair percentage
+
+- **Labor Configuration**
+  - CRUD features for Labor configuration
+  - Import and export configuration as JSON
+  - Configuration may include
+    - Labor cost
+    - Labor time
+
+- **Cost Calculation**
+  - Calculate the cost of a print
+  - Add elecrity cost
+  - Add filament cost
+  - Add labor cost
+  - Add machine cost
 
 ## Getting Started
 
