@@ -2,6 +2,7 @@
 
 import { AppSidebar } from '@/components/app-sidebar';
 import { FilamentTableCard } from '@/components/configuration/FilamentTableCard';
+import { MachineTableCard } from '@/components/configuration/MachineTableCard';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -54,7 +55,7 @@ export default function Home() {
           <div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min" />
           <div className="grid auto-rows-min gap-4 md:grid-cols-3">
             <FilamentTableCard />
-            <div className="aspect-video rounded-xl bg-muted/50" />
+            <MachineTableCard />
             <div className="aspect-video rounded-xl bg-muted/50" />
           </div>
         </div>
