@@ -124,13 +124,15 @@ const data = {
   navSecondary: [
     {
       title: 'Support',
-      url: '#',
+      url: 'https://github.com/RemcoGoy/CreationCost/',
       icon: LifeBuoy,
+      newPage: true,
     },
     {
       title: 'Feedback',
-      url: '#',
+      url: 'https://github.com/RemcoGoy/CreationCost/issues',
       icon: Send,
+      newPage: true,
     },
   ],
   projects: [
