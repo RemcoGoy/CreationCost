@@ -1,19 +1,9 @@
 'use client';
 
 import * as React from 'react';
-import {
-  BookOpen,
-  Bot,
-  Frame,
-  LifeBuoy,
-  Map,
-  PieChart,
-  Send,
-  Settings2,
-  SquareTerminal,
-  SquareSigma,
-  Calculator,
-} from 'lucide-react';
+import { LifeBuoy, Send, Settings2, SquareSigma, Calculator } from 'lucide-react';
+
+import { useSession } from 'next-auth/react';
 
 import { NavMain } from '@/components/nav-main';
 import { NavSecondary } from '@/components/nav-secondary';
@@ -80,6 +70,8 @@ const data = {
 };
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const { data: session, status } = useSession();
+
   return (
     <Sidebar variant="inset" {...props}>
       <SidebarHeader>
@@ -104,7 +96,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={data.user} />
+        <NavUser user={session?.user ?? null} />
       </SidebarFooter>
     </Sidebar>
   );
