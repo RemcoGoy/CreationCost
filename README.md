@@ -1,8 +1,11 @@
 # CreationCost
 
+https://vercel.com/guides/nextjs-prisma-postgres#step-6.-set-up-github-authentication-with-nextauth
+
 ## Feature Roadmap
 
 - **Filament Configuration**
+
   - CRUD features for Filament configuration
   - Import and export configuration as JSON
   - Configuration may include
@@ -12,6 +15,7 @@
     - Markup
 
 - **Machine Configuration**
+
   - CRUD features for Machine configuration
   - Import and export configuration as JSON
   - Configuration may include
@@ -20,6 +24,7 @@
     - Repair percentage
 
 - **Labor Configuration**
+
   - CRUD features for Labor configuration
   - Import and export configuration as JSON
   - Configuration may include
