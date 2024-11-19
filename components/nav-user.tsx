@@ -1,6 +1,6 @@
 'use client';
 
-import { BadgeCheck, LogIn, ChevronsUpDown, LogOut, UserPlus } from 'lucide-react';
+import { BadgeCheck, LogIn, ChevronsUpDown, LogOut } from 'lucide-react';
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import {
@@ -20,15 +20,18 @@ import {
 } from '@/components/ui/sidebar';
 import { ThemeToggle } from './theme-toggle';
 import { signOut } from 'next-auth/react';
+import { Skeleton } from '@/components/ui/skeleton';
 
 export function NavUser({
   user,
+  status,
 }: {
   user: {
     name?: string | null;
     email?: string | null;
     image?: string | null;
   } | null;
+  status: 'loading' | 'authenticated' | 'unauthenticated';
 }) {
   const { isMobile } = useSidebar();
 
@@ -41,14 +44,28 @@ export function NavUser({
               size="lg"
               className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
             >
-              <Avatar className="h-8 w-8 rounded-lg">
-                <AvatarImage src={user?.image ?? ''} alt={user?.name ?? ''} />
-                <AvatarFallback className="rounded-lg">{user ? 'CN' : 'AN'}</AvatarFallback>
-              </Avatar>
-              <div className="grid flex-1 text-left text-sm leading-tight">
-                <span className="truncate font-semibold">{user ? user?.name : 'Anonymous'}</span>
-                <span className="truncate text-xs">{user ? user?.email : 'Anonymous'}</span>
-              </div>
+              {status === 'loading' ? (
+                <>
+                  <Skeleton className="h-8 w-8 rounded-lg" />
+                  <div className="space-y-2">
+                    <Skeleton className="h-2 w-[110px]" />
+                    <Skeleton className="h-2 w-[140px]" />
+                  </div>
+                </>
+              ) : (
+                <>
+                  <Avatar className="h-8 w-8 rounded-lg">
+                    <AvatarImage src={user?.image ?? ''} alt={user?.name ?? ''} />
+                    <AvatarFallback className="rounded-lg">{user ? 'CN' : 'AN'}</AvatarFallback>
+                  </Avatar>
+                  <div className="grid flex-1 text-left text-sm leading-tight">
+                    <span className="truncate font-semibold">
+                      {user ? user?.name : 'Anonymous'}
+                    </span>
+                    <span className="truncate text-xs">{user ? user?.email : 'Anonymous'}</span>
+                  </div>
+                </>
+              )}
               <ChevronsUpDown className="ml-auto size-4" />
             </SidebarMenuButton>
           </DropdownMenuTrigger>
@@ -78,7 +95,10 @@ export function NavUser({
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
-              <DropdownMenuItem disabled={!user}>
+              <DropdownMenuItem
+                disabled={!user}
+                onClick={() => (window.location.href = '/account')}
+              >
                 <BadgeCheck />
                 Account
               </DropdownMenuItem>
