@@ -27,14 +27,15 @@ export default function Header() {
             {segments.map((segment, index) => {
               const isLast = index === segments.length - 1;
               const href = `/${segments.slice(0, index + 1).join('/')}`;
+              const capitalizedSegment = segment.charAt(0).toUpperCase() + segment.slice(1);
 
               return (
                 <Fragment key={segment}>
                   <BreadcrumbItem className="hidden md:block">
                     {isLast ? (
-                      <BreadcrumbPage>{segment}</BreadcrumbPage>
+                      <BreadcrumbPage>{capitalizedSegment}</BreadcrumbPage>
                     ) : (
-                      <BreadcrumbLink href={href}>{segment}</BreadcrumbLink>
+                      <BreadcrumbLink href={href}>{capitalizedSegment}</BreadcrumbLink>
                     )}
                   </BreadcrumbItem>
                   {!isLast && <BreadcrumbSeparator className="hidden md:block" />}
