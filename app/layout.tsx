@@ -2,6 +2,9 @@ import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import './globals.css';
 import { Providers } from '@/components/providers';
+import { AppSidebar } from '@/components/app-sidebar';
+import { SidebarInset } from '@/components/ui/sidebar';
+import Header from '@/components/header';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -30,7 +33,13 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         suppressHydrationWarning
       >
-        <Providers>{children}</Providers>
+        <Providers>
+          <AppSidebar />
+          <SidebarInset>
+            <Header />
+            {children}
+          </SidebarInset>
+        </Providers>
       </body>
     </html>
   );
