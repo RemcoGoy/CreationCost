@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 import { cn } from '@/lib/utils';
 import { buttonVariants } from '@/components/ui/button';
-import { UserAuthForm } from '@/components/auth/new-user-form';
+import { NewUserForm } from '@/components/auth/new-user-form';
 
 export const metadata: Metadata = {
   title: 'New User',
@@ -55,7 +55,7 @@ export default function NewUserPage() {
             >
               <path d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3" />
             </svg>
-            Acme Inc
+            Creation Cost
           </div>
           <div className="relative z-20 mt-auto">
             <blockquote className="space-y-2">
@@ -75,18 +75,7 @@ export default function NewUserPage() {
                 Enter your email below to create your account
               </p>
             </div>
-            <UserAuthForm />
-            {/* <p className="px-8 text-center text-sm text-muted-foreground">
-              By clicking continue, you agree to our{' '}
-              <Link href="/terms" className="underline underline-offset-4 hover:text-primary">
-                Terms of Service
-              </Link>{' '}
-              and{' '}
-              <Link href="/privacy" className="underline underline-offset-4 hover:text-primary">
-                Privacy Policy
-              </Link>
-              .
-            </p> */}
+            <NewUserForm />
           </div>
         </div>
       </div>

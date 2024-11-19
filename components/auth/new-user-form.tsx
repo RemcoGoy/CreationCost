@@ -9,20 +9,13 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { signIn } from 'next-auth/react';
 
-interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
+interface NewUserFormProps extends React.HTMLAttributes<HTMLDivElement> {}
 
-export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
+export function NewUserForm({ className, ...props }: NewUserFormProps) {
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
 
   async function onSubmit(provider: string) {
     setIsLoading(true);
-
-    // Fix sign up logic
-    // if (provider === 'email') {
-    //   await signIn('email');
-    // } else if (provider === 'github') {
-    //   await signIn('github');
-    // }
 
     setIsLoading(false);
   }

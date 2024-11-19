@@ -25,7 +25,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
 
   return (
     <div className={cn('grid gap-6', className)} {...props}>
-      <form onSubmit={(event) => onSubmit('email')}>
+      {/* <form onSubmit={(event) => onSubmit('email')}>
         <div className="grid gap-2">
           <div className="grid gap-1">
             <Label className="sr-only" htmlFor="email">
@@ -54,7 +54,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
         <div className="relative flex justify-center text-xs uppercase">
           <span className="bg-background px-2 text-muted-foreground">Or continue with</span>
         </div>
-      </div>
+      </div> */}
       <Button
         onClick={() => onSubmit('github')}
         variant="outline"
