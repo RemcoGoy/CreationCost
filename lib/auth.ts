@@ -12,6 +12,7 @@ export const authOptions = {
   adapter: PrismaAdapter(prisma),
   secret: process.env.SECRET,
   pages: {
-    signUp: '/auth/signup',
+    signIn: '/auth/login',
+    newUser: '/auth/new-user',
   },
 };
