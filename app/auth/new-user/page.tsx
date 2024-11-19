@@ -4,14 +4,14 @@ import Link from 'next/link';
 
 import { cn } from '@/lib/utils';
 import { buttonVariants } from '@/components/ui/button';
-import { UserAuthForm } from '@/components/auth/user-auth-form';
+import { UserAuthForm } from '@/components/auth/new-user-form';
 
 export const metadata: Metadata = {
-  title: 'Signup',
-  description: 'Signup page',
+  title: 'New User',
+  description: 'New User page',
 };
 
-export default function SignupPage() {
+export default function NewUserPage() {
   return (
     <>
       <div className="md:hidden">
