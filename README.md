@@ -1,7 +1,5 @@
 # CreationCost
 
-https://vercel.com/guides/nextjs-prisma-postgres#step-6.-set-up-github-authentication-with-nextauth
-
 ## Feature Roadmap
 
 - **Filament Configuration**
